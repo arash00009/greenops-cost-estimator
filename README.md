@@ -1,5 +1,7 @@
 # GreenOps Cost & Carbon Estimator
 
+![CI](https://github.com/arash00009/greenops-cost-estimator/actions/workflows/ci.yml/badge.svg)
+
 Ett litet REST-API som uppskattar molnkostnad (USD) och koldioxidavtryck (gram CO2) för olika cloud-instanser och regioner. Byggt som ett Capstone-projekt för att visa hur regionval och instansstorlek påverkar både kostnad och klimatpåverkan — en central idé bakom [GreenOps Sweden](https://greenops.se).
 
 ## API-endpoints
