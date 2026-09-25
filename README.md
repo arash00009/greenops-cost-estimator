@@ -2,18 +2,18 @@
 
 ![CI](https://github.com/arash00009/greenops-cost-estimator/actions/workflows/ci.yml/badge.svg)
 
-Ett litet REST-API som uppskattar molnkostnad (USD) och koldioxidavtryck (gram CO2) för olika cloud-instanser och regioner. Byggt som ett Capstone-projekt för att visa hur regionval och instansstorlek påverkar både kostnad och klimatpåverkan — en central idé bakom [GreenOps Sweden](https://greenops.se).
+A small REST API that estimates cloud cost (USD) and carbon footprint (grams of CO2) for different cloud instances and regions. Built as a capstone project to show how the choice of region and instance size affects both cost and climate impact, a core idea behind [GreenOps Sweden](https://greenops.se).
 
-## API-endpoints
+## API endpoints
 
 ### GET /version
-Returnerar appens version.
+Returns the app version.
 
 ### GET /regions
-Listar tillgängliga regioner med pris per timme och carbon intensity (g CO2/kWh).
+Lists available regions with price per hour and carbon intensity (g CO2/kWh).
 
 ### POST /estimate
-Beräknar uppskattad kostnad och CO2-avtryck.
+Calculates estimated cost and CO2 footprint.
 
 **Request body:**
 ```json
@@ -36,22 +36,22 @@ Beräknar uppskattad kostnad och CO2-avtryck.
 }
 ```
 
-Tillgängliga `instance_size`: `small`, `medium`, `large`, `xlarge`
+Available `instance_size` values: `small`, `medium`, `large`, `xlarge`
 
-## Köra lokalt
+## Run locally
 
 ```bash
 python3 app.py
 ```
 
-## Köra med Docker
+## Run with Docker
 
 ```bash
 docker build -t greenops-cost-estimator:v0.1.0 .
 docker run --rm -p 5000:5000 greenops-cost-estimator:v0.1.0
 ```
 
-## Tester
+## Tests
 
 ```bash
 pip install -r requirements.txt
@@ -64,9 +64,9 @@ pytest -v
 flake8 app.py test_app.py regions_data.py --max-line-length=100
 ```
 
-## Om datan
+## About the data
 
-Pris- och carbon-siffrorna i `regions_data.py` är **illustrativa uppskattningar** baserade på offentligt kända mönster (Norden har generellt lägre carbon intensity tack vare vatten- och kärnkraft). De är inte hämtade live från något leverantör-API, för att hålla projektet enkelt, pålitligt testbart och oberoende av externa tjänster.
+The price and carbon figures in `regions_data.py` are **illustrative estimates** based on publicly known patterns (the Nordics generally have lower carbon intensity thanks to hydro and nuclear power). They are not fetched live from any provider API, to keep the project simple, reliably testable and independent of external services.
 
 ## Tech stack
 
